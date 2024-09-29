@@ -1,0 +1,380 @@
+/* Custom Toggle Button Styles */
+#checkbox {
+    display: none;
+  }
+  
+  .toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    transition-duration: .5s;
+  }
+  
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(176, 92, 255);
+    border-radius: 4px;
+  }
+  
+  #bar2 {
+    transition-duration: .8s;
+  }
+  
+  #bar1,#bar3 {
+    width: 70%;
+  }
+  
+  #checkbox:checked + .toggle .bars {
+    position: absolute;
+    transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle #bar2 {
+    transform: scaleX(0);
+    transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle {
+    transition-duration: .5s;
+    transform: rotate(180deg);
+  }
+
+.gpt3__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    position: fixed; /* Fix the navbar at the top of the viewport */
+    width: 100%; /* Ensure it spans the full width */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Adds shadow for better visibility */
+    background:radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+}
+
+.gpt3__navbar-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.gpt3__navbar-links_logo {
+    margin-right: 2rem;
+}
+
+.gpt3__navbar-links_logo img {
+    width: 100px; /* Set width to auto to maintain aspect ratio */
+    height: 100px; /* Set desired height */
+    max-width: 100%; /* Ensure the logo doesn't exceed its container's width */
+    display: block; /* Ensures proper display */
+    margin: 0 auto; /* Center the logo horizontally */
+}
+
+.gpt3__navbar-links_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.gpt3__navbar-sign {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.gpt3__navbar-links_container p,
+.gpt3__navbar-sign p,
+.gpt3__navbar-menu_container p {
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: capitalize;
+
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.gpt3__navbar-sign button,
+.gpt3__navbar-menu_container button {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.gpt3__navbar-sign button::before, .gpt3__navbar-menu_container button::before{
+    margin-left: auto;
+  }
+  
+  .gpt3__navbar-sign button::after, .gpt3__navbar-sign button::before,
+   .gpt3__navbar-menu_container button::after, .gpt3__navbar-menu_container button::before {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    transition: 0.5s;
+  }
+  
+  .gpt3__navbar-sign button:hover::after, .gpt3__navbar-sign button:hover::before,
+  .gpt3__navbar-menu_container button:hover::after, .gpt3__navbar-menu_container button:hover::before {
+    width: 100%;
+  }
+
+.gpt3__navbar-menu {
+    margin-left: 1rem;
+    display: none;
+    position: relative;
+}
+
+.gpt3__navbar-menu svg {
+    cursor: pointer;
+}
+
+.gpt3__navbar-menu_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    
+    text-align: end;
+    background: var(--color-footer);
+    padding: 2rem;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    margin-top: 1rem;
+    min-width: 210px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
+}
+
+.gpt3__navbar-menu_container p {
+    margin: 1rem 0;
+}
+
+.gpt3__navbar-menu_container-links-sign {
+    display: none;
+}
+
+@media screen and (max-width: 1050px) {
+    .gpt3__navbar-links_container {
+        display: none;
+    }
+
+    .gpt3__navbar-menu {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .gpt3__navbar {
+        padding: 2rem 4rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .gpt3__navbar {
+        padding: 2rem;
+    }
+
+    .gpt3__navbar-sign {
+        display: none;
+    }
+
+    .gpt3__navbar-menu_container {
+        top: 20px;
+    }
+
+    .gpt3__navbar-menu_container-links-sign {
+        display: block;
+    }
+}
+
+/* Ensure the toggle menu is always visible when authenticated */
+.gpt3__navbar-menu.authenticated {
+    display: flex;
+}
+
+@media screen and (max-width: 1050px) {
+    .gpt3__navbar-links_container {
+        display: none;
+    }
+
+    .gpt3__navbar-menu {
+        display: flex;
+    }
+}
+
+
+
+/* */
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    position: relative;
+    align-items: center;
+    transition: all 0.5s; /* Apply transition to all properties */
+}
+
+.auth-form svg {
+    cursor: pointer;
+}
+
+.auth-form_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: end;
+    background: var(--color-footer);
+    padding: 2rem;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    margin-top: 1rem;
+    min-width: 210px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
+}
+
+.auth-form_container p {
+    margin: 1rem 0;
+}
+
+.auth-form_container p {
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 25px;
+    text-transform: capitalize;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.auth-form_container h2 {
+    margin: 1rem 0;
+}
+
+.auth-form_container h2 {
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 25px;
+    position: relative;
+    left: -53px;
+    line-height: 25px;
+    text-transform: capitalize;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+
+#head{
+    position: relative;
+    left: -345px;
+}
+.auth-form_container button {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.auth-form_container button::before{
+    margin-left: auto;
+  }
+  
+.auth-form_container button::after, .auth-form_container button::before {
+content: '';
+width: 0%;
+height: 2px;
+background: #f44336;
+display: block;
+transition: 0.5s;
+}
+  
+.auth-form_container button:hover::after, .auth-form_container button:hover::before {
+width: 100%;
+}
+
+
+.auth-form input {
+margin: 0.5rem 0;
+padding: 0.5rem;
+width: 200px;
+border-radius: 5px;
+border: 1px solid #ccc;
+transition: all 0.3s; /* Apply transition to all properties */
+}
+
+.auth-form button {
+font-size: 14px;
+margin: 0.5rem 0;
+padding: 0.5rem 1rem;
+border-radius: 5px;
+border: none;
+background-color: #f44336;
+color: #fff;
+cursor: pointer;
+transition: background-color 0.3s; /* Apply transition to background-color property */
+}
+
+.auth-form button:hover {
+background-color: #d32f2f;
+transition: background-color 0.3s; /* Apply transition to background-color property */
+}
+
+  
+
+@media screen and (max-width: 1050px) {
+    .auth-form {
+        display: flex;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .auth-form_container {
+        top: 20px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .auth-form {
+        display: flex;
+    }
+}
+
+

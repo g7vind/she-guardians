@@ -1,0 +1,740 @@
+.login-box {
+  position: absolute;
+  top: 135%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(24, 20, 20, 0.987);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+
+#headd{
+  color: white;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #bdb8b8;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.login-box a:hover {
+  background: #03f40f;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03f40f,
+              0 0 25px #03f40f,
+              0 0 50px #03f40f,
+              0 0 100px #03f40f;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(1) {
+  bottom: 2px;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03f40f);
+  animation: btn-anim1 2s linear infinite;
+}
+
+.sdashboard__page {
+    display: flex;
+}
+
+.notification {
+    display: flex;
+    margin: 50px;
+    flex-direction: column;
+    isolation: isolate;
+    position: relative;
+    width: 18rem;
+    height: 8rem;
+    background: #29292c;
+    border-radius: 1rem;
+    overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
+    --color: #32a6ff;
+    cursor: pointer;
+  }
+  
+  .notification:before {
+    position: absolute;
+    content: "";
+    inset: 0.0625rem;
+    border-radius: 0.9375rem;
+    background: #18181b;
+    z-index: 2
+  }
+  
+  .notification:after {
+    position: absolute;
+    content: "";
+    width: 0.25rem;
+    inset: 0.65rem auto 0.65rem 0.5rem;
+    border-radius: 0.125rem;
+    background: var(--gradient);
+    transition: transform 300ms ease;
+    z-index: 4;
+  }
+  
+  .notification:hover:after {
+    transform: translateX(0.15rem)
+  }
+  
+  .notititle {
+    color: var(--color);
+    padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+  }
+  
+  .notification:hover .notititle {
+    transform: translateX(0.15rem)
+  }
+  
+  .notibody {
+    color: #99999d;
+    padding: 0 1.25rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+  }
+  
+  .notification:hover .notibody {
+    transform: translateX(0.25rem)
+  }
+  
+  .notiglow,
+  .notiborderglow {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle closest-side at center, white, transparent);
+    opacity: 0;
+    transition: opacity 300ms ease;
+  }
+  
+  .notiglow {
+    z-index: 3;
+  }
+  
+  .notiborderglow {
+    z-index: 1;
+  }
+  
+  .notification:hover .notiglow {
+    opacity: 0.1
+  }
+  
+  .notification:hover .notiborderglow {
+    opacity: 0.1
+  }
+  
+  .note {
+    color: var(--color);
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 0.9rem;
+    width: 75%;
+  }
+
+  .table_data {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .table_data th,
+  .table_data td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table_data th {
+    background-color: var(--color-footer);
+    font-weight: bold;
+    color: #ffff;
+  }
+  
+  .table_data tr:nth-child(even) {
+    color: #ffff;
+    background-color:var(--color-footer);
+  }
+  
+  .table_data tr:nth-child(odd) {
+    color: #ffff;
+    background-color: var(--color-footer);
+  }
+  
+  .table_data tr:hover {
+    background-color: #3568a8;
+  }
+
+  .sdashboard_form_container {
+    margin-top: 20px;
+    background-color: var(--color-footer);
+  }
+  
+  .sdashboard_form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .sdashboard_form h3 {
+    margin-bottom: 10px;
+  }
+  
+  .input-group-admin {
+    margin-bottom: 35px;
+  }
+  
+  .input-icon {
+    margin-right: 10px;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+  .card-outer-container {
+    color: #ddd;
+  }
+
+  .welcome-text {
+    display: flex;
+    color: #ddd;
+    padding-left: 30px;
+  }
+
+
+  .card-outer-container {
+    background-color: #270e43;
+    font-family: Montserrat, sans-serif;
+    padding-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+    min-height: 100vh;
+    margin: 0;
+  
+  }
+  
+  
+  p {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  
+  .card-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+    /* 	color: #B3B8CD; */
+    padding-top: 30px;
+    position: relative;
+    width: 350px;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .edit-symbol {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .imp-data {
+    background-color: #a94b7f;
+    text-align: left;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 5px;
+  }
+  
+  #em {
+    color: black;
+  }
+  
+  #emm {
+    color: black;
+  }
+  
+  .imp-data p {
+    border: 1px solid #2D2747;
+    border-radius: 5px;
+    display: block;
+    /* 	text-align: center; */
+    font-size: 20px;
+    margin: 10px 7px 7px 10;
+    padding: 20px;
+  }
+  
+  .icon-style {
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  #cd {
+    background: none;
+  }
+  
+  .sd {
+    width: 60%;
+  }
+
+
+  .places-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line */
+  }
+  
+  .place-item {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    flex: 1 0 200px;
+    /* Adjust the width of each item */
+    max-width: 300px;
+    /* Limit the maximum width of each item */
+  }
+  
+  .place-item h4 {
+    margin: 0;
+  }
+  
+  .place-item p {
+    margin: 5px 0;
+  }
+  
+  .booking-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .booking-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .bookings-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .booking-item {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  .booking-item p {
+    margin: 5px 0;
+  }
+  
+  .logout-button {
+    position: fixed;
+    /* Or absolute, depending on your layout */
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #f44336;
+    /* Red color for logout button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    /* Ensure it's above other elements */
+  }
+  
+  .logout-button:hover {
+    background-color: #d32f2f;
+    /* Darker shade on hover */
+  }
+  
+  .places-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow cards to wrap to the next row */
+    gap: 20px;
+    /* Adjust the gap between cards as needed */
+    justify-content: center;
+    /* Center the cards within the container */
+  }
+  
+  .places-list li {
+    flex: 1;
+    /* Each item can grow */
+    min-width: 250px;
+    /* Minimum width of each item, adjust as needed */
+    max-width: 250px;
+    /* Maximum width of each item, adjust as needed */
+    list-style: none;
+    /* Remove default list styling */
+  }
+  
+  
+  .places-list li div {
+    width: 100%;
+    /* Ensure the content takes up the full width */
+    padding: 1rem;
+    /* Add padding around each card */
+    background:#560000;    
+    border-radius: 0.5rem;
+    /* Rounded corners for each card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Shadow effect for each card */
+  }
+  
+  
+  .places-list li div figure img {
+    width: 100%;
+    /* Ensure the image covers the figure element */
+    height: auto;
+    /* Maintain aspect ratio */
+    object-fit: cover;
+    /* Cover the figure area without stretching */
+  }
+  
+  .places-list li div h2 {
+    margin: 0.5rem 0;
+    /* Adjust title margin */
+    font-size: 1.25rem;
+    /* Adjust font size */
+    font-weight: bold;
+    /* Adjust font weight */
+    color: rgb(255, 255, 255);
+  }
+  
+  .places-list li div p {
+    margin: 0.25rem 0;
+    /* Adjust paragraph margin */
+  }
+  
+  .places-list li div .card-actions {
+    display: flex;
+    justify-content: flex-end;
+    /* Align button to the end */
+  }
+  
+  .places-list li div button {
+    background-color: #bd6a9d;
+    /* Primary blue */
+    color: white;
+    /* Text color */
+    padding: 0.5rem 1rem;
+    /* Padding around the text */
+    border: none;
+    /* No border */
+    border-radius: 0.25rem;
+    /* Slightly rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+  }
+  
+  .places-list li div button:hover {
+    background-color: #191550;
+    /* Darker shade on hover */
+  }
+  
+  .dash {
+    color: rgb(255, 255, 255);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+  
+  }
+  
+  .card {
+    max-width: 290px;
+    /* w-96 equivalent to 24rem or 384px */
+    background-color: #f9fafb;
+    /* bg-base-100 equivalent */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    /* shadow-xl equivalent */
+    border-radius: 0.5rem;
+    /* Optional: if you want rounded corners */
+    overflow: hidden;
+    /* Ensures the content respects border-radius */
+    left: 110px;
+    top: 20px;
+    margin-bottom: 55px;
+  }
+  
+  
+  .card figure img {
+    width: 100%;
+    /* Ensure the image covers the figure element */
+    height: auto;
+    /* Maintain aspect ratio */
+    object-fit: cover;
+    /* Cover the figure area without stretching */
+  }
+  
+  .card-body {
+    padding: 1rem;
+    /* Adjust padding as needed */
+    display: flex;
+    /* Apply Flexbox */
+    flex-direction: column;
+    /* Stack children vertically */
+    justify-content: center;
+    /* Center children vertically in the container */
+    align-items: center;
+    /* Center children horizontally in the container */
+  }
+  
+  .card-title {
+    margin: 0.5rem 0;
+    /* Adjust title margin */
+    font-size: 1.25rem;
+    /* Adjust font size */
+    font-weight: bold;
+    /* Adjust font weight */
+    text-align: center;
+    /* Ensure the title is centered */
+  }
+  
+  .card-actions {
+    display: flex;
+    /* Apply Flexbox */
+    justify-content: flex-end;
+    /* Aligns button to the end */
+    padding: 1rem 0;
+    /* Adjust padding as needed */
+    width: 100%;
+    /* Ensure the actions take up the full width of the card-body */
+  }
+  
+  #place {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+  }
+  
+  .btn-primary {
+    background-color: #3b82f6;
+    /* Primary blue */
+    color: white;
+    /* Text color */
+    padding: 0.5rem 1rem;
+    /* Padding around the text */
+    border: none;
+    /* No border */
+    border-radius: 0.25rem;
+    /* Slightly rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+  }
+  
+  .btn-primary:hover {
+    background-color: #2563eb;
+    /* Darker shade on hover */
+  }
+  
+  .liss{
+    background: none;
+    color: #a94b7f;
+  }
+  
+
+
+  .books-list {
+    display: flex;
+    /* Make it a flex container */
+    flex-wrap: wrap;
+    /* Allow items to wrap onto multiple lines */
+    list-style-type: none;
+    /* Remove default list styles */
+    padding: 0;
+    /* Remove padding */
+  }
+  
+  .books-list li {
+    width: calc(50% - 20px);
+    /* Set the width of each card */
+    margin: 10px;
+    /* Add margin between cards */
+  }
+  
+  .books-list li div {
+    width: 100%;
+    /* Ensure the content takes up the full width */
+    padding: 1rem;
+    /* Add padding around each card */
+    background: #000d56;
+    border-radius: 0.5rem;
+    /* Rounded corners for each card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Shadow effect for each card */
+  }
+  
+  .books-list li div h2 {
+    margin: 0.5rem 0;
+    /* Adjust title margin */
+    font-size: 1.25rem;
+    /* Adjust font size */
+    font-weight: bold;
+    /* Adjust font weight */
+    color: rgb(255, 255, 255);
+  }
+  
+  .books-list li div p {
+    margin: 0.25rem 0;
+    /* Adjust paragraph margin */
+    color: white;
+  }
+  
+  .books-list li div .card-actions {
+    display: flex;
+    justify-content: flex-end;
+    /* Align button to the end */
+  }
+
+  #pre{
+    width: auto;
+  }
+
+
+  #up{
+    width: 980px;
+  }
+  
+  #upcoming-bookings {
+    color: white;
+    width: 180px;
+    font-size:larger;
+  }
+  
+  #books {
+    color: white;
+  }
+  
+  #previous-bookings {
+    color: white;
+    font-size: 1.75rem;
+  }
+  
+  .books-list li div button {
+    background-color: #bd6a9d;
+    /* Primary blue */
+    color: white;
+    /* Text color */
+    padding: 0.5rem 1rem;
+    /* Padding around the text */
+    border: none;
+    /* No border */
+    border-radius: 0.25rem;
+    /* Slightly rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+  }
+  
+  .books-list li div button:hover {
+    background-color: #191550;
+    /* Darker shade on hover */
+  }
+  
+  .mywid {
+    padding: 50px;
+    min-width: 100px;
+  }
+  

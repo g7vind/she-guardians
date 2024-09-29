@@ -1,0 +1,9 @@
+.login-container {
+    position: relative; /* or 'absolute' if you want it to float above other content */
+    width: 100%; /* Full width or adjust as necessary */
+    max-width: 400px; /* Optional, for better control on form width */
+    margin: 20px auto; /* Centers the form horizontally */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional, for better visibility */
+    background: #fff; /* Background color for the form */
+  }
